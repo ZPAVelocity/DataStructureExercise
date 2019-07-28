@@ -35,13 +35,6 @@ int main()
     return 0;
 }
 
-bool listExist(seqList *list)
-{
-    if (list == NULL)
-        return false;
-    else
-        return true;
-}
 bool initList(seqList *list)
 {
     if (!listExist(list))
@@ -55,6 +48,13 @@ bool clearList(seqList *list)
         return false;
     list->length = 0;
     return true;
+}
+bool listExist(seqList *list)
+{
+    if (list == NULL)
+        return false;
+    else
+        return true;
 }
 bool listEmpty(seqList *list)
 {

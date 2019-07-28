@@ -10,7 +10,7 @@ int main()
 
     initList(&l);
 
-    elementType element;
+    elemType element;
     int seat;
 
     cout << "insert" << endl;
@@ -69,11 +69,11 @@ int listLength(seqList *list)
 {
     return list->length;
 }
-elementType getElem(seqList *list, int seat)
+elemType getElem(seqList *list, int seat)
 {
     return list->element[seat];
 }
-int locateElem(seqList *list, elementType element)
+int locateElem(seqList *list, elemType element)
 {
     for (int i = 0; i < list->length; i++)
     {
@@ -81,15 +81,15 @@ int locateElem(seqList *list, elementType element)
             return i;
     }
 }
-elementType priorElem(seqList *list, int seat)
+elemType priorElem(seqList *list, int seat)
 {
     return list->element[seat + 1];
 }
-elementType nextElem(seqList *list, int seat)
+elemType nextElem(seqList *list, int seat)
 {
     return list->element[seat - 1];
 }
-bool listInsert(seqList *list, int seat, elementType element)
+bool listInsert(seqList *list, int seat, elemType element)
 {
     if (!listExist(list) ||
         list->length >= MAX_SIZE ||

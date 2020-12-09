@@ -4,7 +4,7 @@ My data structures and algorithm analysis exercise.
 
 ## Data Struct
 
-1. List, 
+1. List
 2. Stack
 3. Queue
 4. Tree

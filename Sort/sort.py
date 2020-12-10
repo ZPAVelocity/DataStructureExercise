@@ -62,14 +62,10 @@ def partition(A, p, r):
     for j in range(p, r):
         if A[j] <= privot:
             i += 1
-            temp = A[i]
-            A[i] = A[j]
-            A[j] = temp
+            A[i], A[j] = A[j], A[i]
 
     # Switch privot to the middle.
-    temp = A[i + 1]
-    A[i + 1] = A[r]
-    A[r] = temp
+    A[i + 1], A[r] = A[r], A[i + 1]
     return i + 1
 
 
@@ -123,9 +119,7 @@ def bubbleSort(A, p, r):
     for i in range(p, r + 1):
         for j in range(r, i, -1):
             if A[j] < A[j - 1]:
-                temp = A[j]
-                A[j] = A[j - 1]
-                A[j - 1] = temp
+                A[j], A[j - 1] = A[j - 1], A[j]
 
 
 if __name__ == "__main__":

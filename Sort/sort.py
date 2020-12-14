@@ -1,5 +1,6 @@
 import math
 import sys
+import random
 
 
 def main():
@@ -93,6 +94,19 @@ def quickSort2(A):
         # sub-array of all the elements greater than the pivot
         greater = [i for i in A[1:] if i > pivot]
         return quickSort2(less) + [pivot] + quickSort2(greater)
+
+
+def randomizedPartition(A, p, r):
+    i = random.randint(p, r)
+    A[r], A[i] = A[i], A[r]
+    return partition(A, p, r)
+
+
+def randomizedQuickSort(A, p, r):
+    if p < r:
+        q = randomizedPartition(A, p, r)
+        randomizedQuickSort(A, p, q - 1)
+        randomizedQuickSort(A, q + 1, r)
 
 
 def insertionSort(A, p, r):
